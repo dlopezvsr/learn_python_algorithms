@@ -7,7 +7,7 @@ def binary_search(arr, target):
 
     while left <= right:  # while loop will be in charge of iterating until the minimum value is equals to maximum
         mid = left + right // 2
-        # the mid-value needs it to be inside of the while loop because is changing with the iterations
+        # the mid-value needs it to be inside the while loop because it is changing with the iterations
         if target > arr[mid]:
             # if the target value falls on the right side, the beginning of the right side (left) has to be
             # the mid-value plus one
@@ -19,7 +19,7 @@ def binary_search(arr, target):
         else:
             return mid
             # This means that in some of the previous conditions the mid value (index) is the same as target
-            # causing that neither < nor > are encounterd so else will return the index
+            # causing that neither < nor > are encountered so else will return the index
     return -1
 
 

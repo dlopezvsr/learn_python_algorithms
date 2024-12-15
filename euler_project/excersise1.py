@@ -1,4 +1,3 @@
-
 def counter(number):
     lista = []
     for i in range(1, number):
@@ -6,5 +5,5 @@ def counter(number):
             lista.append(i)
     return sum(lista)
 
-print(counter(1000))
 
+print(counter(1000))
