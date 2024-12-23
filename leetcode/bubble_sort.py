@@ -9,11 +9,11 @@ You are given a list of integers representing the scores of students in an exam.
 
 def bubble_sort(arr):
     for i in range(len(arr)):
-        validator = False
+        validator = False  # Early exit that avoids outer loop unnecessary iterations
         for j in range(0, len(arr) - i - 1):
             if arr[j] < arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                validator = True
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]  # Swapping elements
+                validator = True  # Changing validator in case a swap took place
         if not validator:
             break
 
