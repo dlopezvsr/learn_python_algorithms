@@ -18,3 +18,37 @@ def quick_sort(arr):
 arr = [10, 7, 8, 9, 1, 5]
 sorted_arr = quick_sort(arr)
 print("Sorted array is:", sorted_arr)
+
+
+### Quick sort in-place
+
+def quicksort(arr, low, high):
+    if low < high:
+        # Partition the array and get the pivot index
+        pivot_index = partition(arr, low, high)
+
+        # Recursively sort the left and right subarrays
+        quicksort(arr, low, pivot_index - 1)
+        quicksort(arr, pivot_index + 1, high)
+
+
+def partition(arr, low, high):
+    # Choose the last element as the pivot
+    pivot = arr[high]
+    i = low - 1  # Pointer for the smaller element
+
+    for j in range(low, high):
+        # If the current element is smaller than or equal to the pivot
+        if arr[j] <= pivot:
+            i += 1  # Move the pointer for the smaller element
+            arr[i], arr[j] = arr[j], arr[i]  # Swap elements
+
+    # Place the pivot in its correct position
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1  # Return the pivot index
+
+
+# Example usage:
+arr = [8, 3, 1, 7, 0, 10, 2]
+quicksort(arr, 0, len(arr) - 1)
+print("Sorted array:", arr)
